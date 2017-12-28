@@ -21,6 +21,24 @@ function gcpRequestRetry(params, retry, callback) {
     });
 }
 
+/*
+<CreateBucketConfiguration>
+  <LocationConstraint><location></LocationConstraint>
+  <StorageClass><storage class></StorageClass>
+</CreateBucketConfiguration>
+*/
+const regionalLoc = 'us-west1';
+const multiRegionalLoc = 'us';
+function setBucketClass(storageClass) {
+    const locationConstraint =
+        storageClass === 'REGIONAL' ? regionalLoc : multiRegionalLoc;
+    return '<CreateBucketConfiguration>' +
+        `<LocationConstraint>${locationConstraint}</LocationConstraint>` +
+        `<StorageClass>${storageClass}</StorageClass>` +
+        '</CreateBucketConfiguration>';
+}
+
 module.exports = {
     gcpRequestRetry,
+    setBucketClass,
 };
