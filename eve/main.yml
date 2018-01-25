@@ -99,14 +99,15 @@ stages:
       - ShellCommand: *node_modules
       - ShellCommandWithSecrets: *aws_credentials
       - ShellCommand:
+          command: tty
+          usePTY: True
+      - ShellCommand:
+          command: env
+          usePTY: True
+      - ShellCommand:
           name: run multi-backends unit tests
           usePTY: True
-          logfiles:
-            start_dmd: nohup.out
-          command: >
-              sh -c "npm run start_dmd &" &&
-              sh -c "bash wait_for_local_port.bash 9990 40 &&
-              npm run multiple_backend_test"
+          command: ./toto.sh
 
   # TODO: deduplicate using a setvar for node number
   node0:
