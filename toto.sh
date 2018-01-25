@@ -32,4 +32,4 @@ do nc -w 1 localhost 9990
     fi
     sleep 0.5
 done
-npm run multiple_backend_tests
+npm run multiple_backend_test
