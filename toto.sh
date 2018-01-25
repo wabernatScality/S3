@@ -32,4 +32,4 @@ do nc -w 1 localhost 9990
     fi
     sleep 0.5
 done
-CI=true S3BACKEND=mem S3DATA=multiple mocha -t 20000 --no-exit --trace --recursive tests/multipleBackend
+CI=true S3BACKEND=mem S3DATA=multiple mocha -t 20000 --no-exit --recursive tests/multipleBackend
