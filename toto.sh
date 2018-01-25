@@ -23,4 +23,5 @@ do nc -w 1 localhost 9990
     fi
     sleep 0.5
 done
+sleep 30
 npm run multiple_backend_test
