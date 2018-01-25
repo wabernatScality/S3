@@ -23,5 +23,4 @@ do nc -w 1 localhost 9990
     fi
     sleep 0.5
 done
-sleep 30
-npm run multiple_backend_test
+CI=true S3BACKEND=mem S3DATA=multiple mocha -t 20000 --recursive tests/multipleBackend
