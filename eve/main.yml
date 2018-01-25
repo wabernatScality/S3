@@ -109,8 +109,10 @@ stages:
           usePTY: True
           command: ./toto.sh
           logfiles:
-            stdout: npm-out
-            stderr: npm-err
+            npm-debug: npm-debug.log
+            server-out: npm-out
+            server-err: npm-err
+
 
   # TODO: deduplicate using a setvar for node number
   node0:
