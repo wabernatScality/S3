@@ -104,7 +104,7 @@ stages:
       - ShellCommand:
           command: env
           usePTY: True
-      - ShellCommand:
+      - SecretShellCommand:
           name: run multi-backends unit tests
           usePTY: True
           command: ./toto.sh
