@@ -108,6 +108,9 @@ stages:
           name: run multi-backends unit tests
           usePTY: True
           command: ./toto.sh
+          logfifles:
+            stdout: npm-out
+            stderr: npm-err
 
   # TODO: deduplicate using a setvar for node number
   node0:
