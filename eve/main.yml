@@ -101,6 +101,8 @@ stages:
       - ShellCommand:
           name: run multi-backends unit tests
           usePTY: True
+          logfiles:
+            start_dmd: nohup.out
           command: >
               nohup npm run start_dmd &
               bash wait_for_local_port.bash 9990 40 &&
