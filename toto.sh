@@ -2,7 +2,7 @@
 
 set +x
 
-npm-run-all --parallel start_dmd start_dataserver > npm-out 2> npm-err &
+npm-run-all --parallel start_mdserver start_dataserver > npm-out 2> npm-err &
 while true
 do nc -w 1 localhost 9991
     ret=$?
