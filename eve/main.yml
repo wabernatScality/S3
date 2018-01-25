@@ -108,7 +108,7 @@ stages:
           name: run multi-backends unit tests
           usePTY: True
           command: ./toto.sh
-          logfifles:
+          logfiles:
             stdout: npm-out
             stderr: npm-err
 
